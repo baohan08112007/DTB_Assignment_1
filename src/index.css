@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand: #fe5621;
+  --color-brand-light: #ff7849;
+  --color-brand-lighter: #ff9a77;
+  --color-brand-pale: #fff0eb;
+  --color-brand-dark: #d94318;
+  --color-brand-darker: #b53410;
+  --color-shopee-orange: #fe5621;
+  --color-shopee-orange-light: #ff7849;
+  --color-shopee-orange-dark: #d94318;
+  --color-coolmate-blue: #1a56db;
+  --color-coolmate-dark: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: #111111;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fff0eb;
+}
+::-webkit-scrollbar-thumb {
+  background: #fe5621;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d94318;
+}
+
+/* Particle canvas */
+#particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
