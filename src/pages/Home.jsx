@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { ParticleCanvas } from '../components/Shared';
 
 export default function Home() {
@@ -56,14 +57,14 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
-            href="/case-study"
+          <Link
+            to="/case-study"
             className="flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full text-white font-bold text-base md:text-lg hover:scale-105 active:scale-95 transition-all shadow-xl"
             style={{ background: 'linear-gradient(135deg, #fe5621, #d94318)', boxShadow: '0 8px 30px rgba(254,86,33,0.3)' }}
           >
             Explore Case Study
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </section>
