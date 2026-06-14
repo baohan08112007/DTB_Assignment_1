@@ -109,7 +109,7 @@ export const CashFlowViz = () => {
           ))}
         </div>
         <div className="mt-4 text-center">
-          <span className="text-xs font-bold px-3 py-1 rounded-full bg-red-50 text-red-500 border border-red-100">
+          <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#fe5621]/10 text-[#fe5621] border border-[#fe5621]/20">
             −12 to 15% cost
           </span>
         </div>

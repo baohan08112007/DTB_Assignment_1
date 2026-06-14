@@ -36,7 +36,7 @@ export const MainLayout = () => {
               </span>
             </NavLink>
 
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden md:flex items-center gap-1">
               {NAV_LINKS.map(link => (
                 <NavLink
                   key={link.href}

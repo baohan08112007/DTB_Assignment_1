@@ -8,7 +8,7 @@ import { CashFlowViz } from '../components/Charts';
 
 export default function CaseStudy() {
   return (
-    <AnimatedSection id="case-study" className="py-28 relative overflow-hidden bg-[#0a0a0a]">
+    <AnimatedSection id="case-study" className="py-28 relative overflow-hidden" style={{ backgroundColor: '#222222' }}>
       {/* Background glows */}
       <motion.div
         animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.3, 0.15] }}
@@ -57,7 +57,7 @@ export default function CaseStudy() {
                 ].map((row, i) => (
                   <li key={i} className="flex items-center justify-between gap-3">
                     <span className="text-sm text-gray-400">{row.title}</span>
-                    <span className={`text-xs font-bold px-3 py-1.5 rounded-xl ${row.bad ? 'bg-red-900/30 text-red-400 border border-red-900/40' : 'bg-green-900/30 text-green-400 border border-green-900/40'}`}>
+                    <span className={`text-xs font-bold px-3 py-1.5 rounded-xl ${row.bad ? 'bg-[#fe5621]/20 text-[#fe5621] border border-[#fe5621]/30' : 'bg-green-900/30 text-green-400 border border-green-900/40'}`}>
                       {row.val}
                     </span>
                   </li>
@@ -103,12 +103,12 @@ export default function CaseStudy() {
 
         {/* Charts Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-14">
-          <motion.div variants={scaleIn} className="rounded-3xl p-8 border bg-white/5 border-white/10">
+          <motion.div variants={scaleIn} className="rounded-3xl p-8 border bg-[#000000] border-white/10">
             <h3 className="text-xl font-bold text-white text-center mb-8">Cost Comparison (% per order)</h3>
             <InteractiveBarChart data={feeData} />
           </motion.div>
           
-          <motion.div variants={scaleIn} className="rounded-3xl p-8 border bg-white/5 border-white/10">
+          <motion.div variants={scaleIn} className="rounded-3xl p-8 border bg-[#000000] border-white/10">
             <h3 className="text-xl font-bold text-white text-center mb-8">Radar — Overall Capability Comparison</h3>
             <InteractiveRadarChart data={radarData} />
           </motion.div>
@@ -122,7 +122,7 @@ export default function CaseStudy() {
         </motion.div>
 
         {/* Full Metrics Comparison Table */}
-        <motion.div variants={fadeUp} className="rounded-3xl p-8 md:p-12 mb-14 border border-gray-100 shadow-sm bg-white overflow-hidden">
+        <motion.div variants={fadeUp} className="rounded-3xl p-8 md:p-12 mb-14 border border-gray-200 shadow-sm bg-[#f2f5fa] overflow-hidden">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-2">Full Comparative Analysis</h3>
           <div className="overflow-x-auto mt-8">
             <table className="w-full text-sm">

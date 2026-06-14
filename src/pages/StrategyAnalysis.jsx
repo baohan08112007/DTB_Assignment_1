@@ -43,7 +43,7 @@ export default function StrategyAnalysis() {
         
         <div className="grid md:grid-cols-2 gap-8">
           {/* Before - Traditional */}
-          <motion.div variants={fadeLeft} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+          <motion.div variants={fadeLeft} className="bg-white rounded-2xl p-6 border border-red-200 shadow-sm bg-gradient-to-br from-red-50 to-white">
             <div className="text-xs font-bold text-red-400 uppercase tracking-widest mb-5 flex items-center gap-2">
               <XCircle className="w-4 h-4" />
               Before — Traditional

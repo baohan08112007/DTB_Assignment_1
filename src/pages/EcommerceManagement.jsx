@@ -16,7 +16,7 @@ export default function EcommerceManagement() {
       {/* Channel Evolution */}
       <motion.div variants={fadeUp} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm mb-12">
         <h3 className="text-xl font-bold text-gray-900 text-center mb-8">Sales Channel Evolution</h3>
-        <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
           {[
             { name: 'Single Channel', desc: 'Only one channel. Simple but high risk.', width: '33%' },
             { name: 'Multi Channel', desc: 'Multiple independent channels — website, Shopee, Facebook.', width: '60%' },

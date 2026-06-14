@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { fadeUp, stagger } from '../data/constants';
 import { ShoppingBag } from 'lucide-react';
 
-export const AnimatedSection = ({ children, id, className = '' }) => {
+export const AnimatedSection = ({ children, id, className = '', ...props }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
   return (
@@ -14,6 +14,7 @@ export const AnimatedSection = ({ children, id, className = '' }) => {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       className={className}
+      {...props}
     >
       {children}
     </motion.section>
@@ -58,26 +59,32 @@ export const Card = ({ children, className = '', hover = true }) => (
   </div>
 );
 
-export const ShopeeLogo = ({ className = "w-10 h-10 text-[24px]" }) => (
-  <div className={`${className} rounded-[25%] flex items-center justify-center text-white font-black relative overflow-hidden flex-shrink-0 shadow-sm`} style={{ background: 'linear-gradient(135deg, #fe5621, #d94318)' }}>
-    <ShoppingBag className="w-[65%] h-[65%] text-white absolute top-[15%]" style={{ strokeWidth: 2.5 }} />
-    <span className="relative z-10 text-[0.45em] mt-[20%] font-bold font-sans tracking-tighter">S</span>
+export const ShopeeLogo = ({ className = "w-10 h-10" }) => (
+  <div className={`${className} rounded-[22%] flex-shrink-0 overflow-hidden shadow-sm`} style={{ background: 'linear-gradient(145deg, #f97040 0%, #ee4d2d 100%)' }}>
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      {/* Shopping bag body */}
+      <path d="M28 40 Q26 40 25 42 L20 80 Q19 83 22 83 L78 83 Q81 83 80 80 L75 42 Q74 40 72 40 Z" fill="white"/>
+      {/* Bag handle */}
+      <path d="M38 40 Q38 24 50 24 Q62 24 62 40" stroke="white" strokeWidth="6" strokeLinecap="round" fill="none"/>
+      {/* S letter in orange */}
+      <text x="50" y="71" textAnchor="middle" fontSize="30" fontWeight="900" fontFamily="Arial, sans-serif" fill="#ee4d2d" letterSpacing="-1">S</text>
+    </svg>
   </div>
 );
 
 export const CompRow = ({ label, shopeeVal, coolmateVal, shopeeGood, coolmateGood }) => (
   <motion.tr
     variants={fadeUp}
-    className="border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors"
+    className="border-b border-gray-200 last:border-0 hover:bg-white transition-colors"
   >
     <td className="py-4 px-4 text-sm font-semibold text-gray-700">{label}</td>
     <td className="py-4 px-4 text-center">
-      <span className={`text-sm font-bold px-3 py-1.5 rounded-xl inline-block ${shopeeGood ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-500'}`}>
+      <span className={`text-sm font-bold inline-block ${shopeeGood ? 'text-green-600' : 'text-[#fe5621]'}`}>
         {shopeeVal}
       </span>
     </td>
     <td className="py-4 px-4 text-center">
-      <span className={`text-sm font-bold px-3 py-1.5 rounded-xl inline-block ${coolmateGood ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-500'}`}>
+      <span className={`text-sm font-bold inline-block ${coolmateGood ? 'text-green-600' : 'text-[#fe5621]'}`}>
         {coolmateVal}
       </span>
     </td>
