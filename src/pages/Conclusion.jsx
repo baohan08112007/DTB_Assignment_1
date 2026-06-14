@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function Conclusion() {
   return (
-    <AnimatedSection id="conclusion" className="py-28 bg-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <AnimatedSection id="conclusion" className="py-16 md:py-28 bg-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <SectionHeading
         tag="7. Q&A & Conclusion"
         title="Conclusion & Takeaways"
@@ -41,7 +41,7 @@ export default function Conclusion() {
       <motion.div variants={fadeUp} className="mt-16">
         <Link
           to="/"
-          className="inline-flex items-center gap-3 px-10 py-5 rounded-full text-white font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-xl"
+          className="inline-flex items-center gap-3 px-7 py-4 md:px-10 md:py-5 rounded-full text-white font-bold text-base md:text-lg hover:scale-105 active:scale-95 transition-all shadow-xl"
           style={{ background: 'linear-gradient(135deg, #fe5621, #d94318)', boxShadow: '0 8px 30px rgba(254,86,33,0.35)' }}
         >
           Back to Home

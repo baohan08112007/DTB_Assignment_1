@@ -8,7 +8,7 @@ import { CashFlowViz } from '../components/Charts';
 
 export default function CaseStudy() {
   return (
-    <AnimatedSection id="case-study" className="py-28 relative overflow-hidden" style={{ backgroundColor: '#222222' }}>
+    <AnimatedSection id="case-study" className="py-16 md:py-28 relative overflow-hidden" style={{ backgroundColor: '#222222' }}>
       {/* Background glows */}
       <motion.div
         animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.3, 0.15] }}
@@ -35,7 +35,7 @@ export default function CaseStudy() {
         {/* Two-Panel Comparison */}
         <div className="grid md:grid-cols-2 gap-8 mb-14">
           {/* Shopee Panel */}
-          <motion.div variants={fadeLeft} className="rounded-3xl p-8 border relative overflow-hidden bg-gradient-to-br from-[#1a0800] to-[#2d0f00] border-[#fe562130]">
+          <motion.div variants={fadeLeft} className="rounded-3xl p-5 md:p-8 border relative overflow-hidden bg-gradient-to-br from-[#1a0800] to-[#2d0f00] border-[#fe562130]">
             <div className="absolute top-0 right-0 w-40 h-40 rounded-full blur-2xl bg-[#fe562115]" />
             <div className="relative z-10">
               <div className="flex items-center gap-4 mb-8">
@@ -67,7 +67,7 @@ export default function CaseStudy() {
           </motion.div>
 
           {/* Coolmate Panel */}
-          <motion.div variants={fadeRight} className="rounded-3xl p-8 border relative overflow-hidden bg-gradient-to-br from-[#000d1a] to-[#001229] border-[#1a56db40]">
+          <motion.div variants={fadeRight} className="rounded-3xl p-5 md:p-8 border relative overflow-hidden bg-gradient-to-br from-[#000d1a] to-[#001229] border-[#1a56db40]">
             <div className="absolute top-0 right-0 w-40 h-40 rounded-full blur-2xl bg-[#1a56db15]" />
             <div className="relative z-10">
               <div className="flex items-center gap-4 mb-8">
@@ -115,15 +115,15 @@ export default function CaseStudy() {
         </div>
 
         {/* Cash Flow Animation */}
-        <motion.div variants={fadeUp} className="rounded-3xl p-8 md:p-10 border bg-white/5 border-white/10 mb-14">
+        <motion.div variants={fadeUp} className="rounded-3xl p-5 md:p-10 border bg-white/5 border-white/10 mb-14">
           <h3 className="text-xl font-bold text-white text-center mb-2">Cash Flow Logic</h3>
           <p className="text-gray-400 text-sm text-center mb-6">Actual cash flow — Hover for details</p>
           <CashFlowViz />
         </motion.div>
 
         {/* Full Metrics Comparison Table */}
-        <motion.div variants={fadeUp} className="rounded-3xl p-8 md:p-12 mb-14 border border-gray-200 shadow-sm bg-[#f2f5fa] overflow-hidden">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-2">Full Comparative Analysis</h3>
+        <motion.div variants={fadeUp} className="rounded-3xl p-5 md:p-12 mb-14 border border-gray-200 shadow-sm bg-[#f2f5fa] overflow-hidden">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-900 text-center mb-2">Full Comparative Analysis</h3>
           <div className="overflow-x-auto mt-8">
             <table className="w-full text-sm">
               <thead>
@@ -151,7 +151,7 @@ export default function CaseStudy() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold mb-4 bg-brand/20 text-orange-300 border border-brand/30">
               <AlertTriangle className="w-3.5 h-3.5" /> Real-world Barriers
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Constraints & Environmental Adaptation</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Constraints & Environmental Adaptation</h3>
           </div>
           <motion.div variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[

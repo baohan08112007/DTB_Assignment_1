@@ -6,7 +6,7 @@ import { AnimatedSection, SectionHeading, Card } from '../components/Shared';
 
 export default function StrategyAnalysis() {
   return (
-    <AnimatedSection id="strategy-analysis" className="py-28 bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <AnimatedSection id="strategy-analysis" className="py-16 md:py-28 bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         tag="4. Strategy Analysis"
         title="Market Structure & Strategy"
@@ -35,7 +35,7 @@ export default function StrategyAnalysis() {
       </motion.div>
 
       {/* DTC Disruption */}
-      <motion.div variants={fadeUp} className="bg-orange-50 rounded-3xl p-8 md:p-12 border border-orange-100">
+      <motion.div variants={fadeUp} className="bg-orange-50 rounded-3xl p-6 md:p-12 border border-orange-100">
         <div className="text-center mb-10">
           <h3 className="text-2xl font-bold text-gray-900 mb-3">DTC Disruption</h3>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm leading-relaxed">How Direct-to-Consumer models are disrupting traditional retail by disintermediating the supply chain.</p>
@@ -66,7 +66,7 @@ export default function StrategyAnalysis() {
               <CheckCircle className="w-4 h-4" />
               After — DTC Direct
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-semibold h-12">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-semibold min-h-12">
               <span className="px-5 py-2.5 rounded-xl text-white shadow-sm" style={{ background: 'linear-gradient(135deg, #fe5621, #d94318)' }}>Brand</span>
               <ArrowRight className="w-6 h-6 text-brand" />
               <span className="px-5 py-2.5 rounded-xl text-white shadow-sm" style={{ background: 'linear-gradient(135deg, #fe5621, #d94318)' }}>Customer</span>

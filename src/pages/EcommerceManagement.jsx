@@ -6,7 +6,7 @@ import { AnimatedSection, SectionHeading, Card } from '../components/Shared';
 
 export default function EcommerceManagement() {
   return (
-    <AnimatedSection id="ecommerce-management" className="py-28 bg-gray-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <AnimatedSection id="ecommerce-management" className="py-16 md:py-28 bg-gray-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         tag="5. E-commerce Management"
         title="E-commerce Structure & Execution"
@@ -16,14 +16,14 @@ export default function EcommerceManagement() {
       {/* Channel Evolution */}
       <motion.div variants={fadeUp} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm mb-12">
         <h3 className="text-xl font-bold text-gray-900 text-center mb-8">Sales Channel Evolution</h3>
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+        <div className="flex flex-col md:flex-row items-stretch md:items-start gap-6">
           {[
-            { name: 'Single Channel', desc: 'Only one channel. Simple but high risk.', width: '33%' },
-            { name: 'Multi Channel', desc: 'Multiple independent channels — website, Shopee, Facebook.', width: '60%' },
-            { name: 'Omni Channel', desc: 'Seamless experience across all channels, synchronized data.', width: '100%' },
+            { name: 'Single Channel', desc: 'Only one channel. Simple but high risk.', pct: 33 },
+            { name: 'Multi Channel', desc: 'Multiple independent channels — website, Shopee, Facebook.', pct: 60 },
+            { name: 'Omni Channel', desc: 'Seamless experience across all channels, synchronized data.', pct: 100 },
           ].map((c, i) => (
             <motion.div key={i} variants={fadeUp} className="flex-1 text-center w-full">
-              <div className="h-4 rounded-full mb-3 mx-auto" style={{ background: `linear-gradient(90deg, #fe5621, #ff9a77)`, width: c.width, opacity: 0.5 + i * 0.2 }} />
+              <div className="h-4 rounded-full mb-3" style={{ background: `linear-gradient(90deg, #fe5621, #ff9a77)`, width: `${c.pct}%`, opacity: 0.5 + i * 0.2 }} />
               <div className="font-bold text-sm text-gray-800">{c.name}</div>
               <div className="text-xs text-gray-500 mt-1 leading-relaxed">{c.desc}</div>
             </motion.div>

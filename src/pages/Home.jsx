@@ -35,7 +35,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-black leading-[1.08] mb-6 text-gray-900 tracking-tight"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[1.08] mb-6 text-gray-900 tracking-tight"
         >
           Digital Business <br className="hidden md:block" /> 
           <span style={{ color: '#fe5621' }}>and E-commerce</span>
@@ -45,7 +45,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg md:text-2xl text-gray-500 mb-10 max-w-3xl mx-auto font-medium"
+          className="text-base md:text-2xl text-gray-500 mb-10 max-w-3xl mx-auto font-medium px-2"
         >
           Deep dive into the transition from traditional retail to modern Direct-to-Consumer models.
         </motion.p>
@@ -58,7 +58,7 @@ export default function Home() {
         >
           <a
             href="/case-study"
-            className="flex items-center gap-3 px-8 py-4 rounded-full text-white font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-xl"
+            className="flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full text-white font-bold text-base md:text-lg hover:scale-105 active:scale-95 transition-all shadow-xl"
             style={{ background: 'linear-gradient(135deg, #fe5621, #d94318)', boxShadow: '0 8px 30px rgba(254,86,33,0.3)' }}
           >
             Explore Case Study

@@ -6,7 +6,7 @@ import { AnimatedSection, SectionHeading, Card } from '../components/Shared';
 
 export default function CustomerBehavior() {
   return (
-    <AnimatedSection id="customer-behavior" className="py-28 bg-gray-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <AnimatedSection id="customer-behavior" className="py-16 md:py-28 bg-gray-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         tag="3. Customer Behavior"
         title="The Consumer Decision Journey"
@@ -14,9 +14,9 @@ export default function CustomerBehavior() {
       />
 
       {/* Decision Journey Map */}
-      <motion.div variants={fadeUp} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm mb-16">
-        <h3 className="text-xl font-bold text-gray-900 text-center mb-10">6 Stages of Decision Making</h3>
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-4">
+      <motion.div variants={fadeUp} className="bg-white rounded-3xl p-5 md:p-8 border border-gray-100 shadow-sm mb-16">
+        <h3 className="text-xl font-bold text-gray-900 text-center mb-8">6 Stages of Decision Making</h3>
+        <div className="grid grid-cols-3 md:flex md:flex-row justify-between items-start gap-3 md:gap-4">
           {[
             { step: 'Awareness', icon: Eye, color: '#3b82f6', desc: 'Triggered by need or ad' },
             { step: 'Consideration', icon: Search, color: '#8b5cf6', desc: 'Research & comparison' },
@@ -26,7 +26,7 @@ export default function CustomerBehavior() {
             { step: 'Advocacy', icon: Share2, color: '#10b981', desc: 'Word of mouth' },
           ].map((v, i) => (
             <React.Fragment key={i}>
-              <motion.div variants={scaleIn} whileHover={{ scale: 1.05 }} className="flex-1 bg-gray-50 rounded-2xl p-5 text-center border border-gray-100 w-full md:w-auto">
+              <motion.div variants={scaleIn} whileHover={{ scale: 1.05 }} className="flex-1 bg-gray-50 rounded-2xl p-3 md:p-5 text-center border border-gray-100 w-full md:w-auto">
                 <div className="w-12 h-12 rounded-2xl mx-auto mb-4 flex items-center justify-center" style={{ background: `${v.color}15` }}>
                   {React.createElement(v.icon, { className: "w-6 h-6", style: { color: v.color } })}
                 </div>
@@ -34,9 +34,8 @@ export default function CustomerBehavior() {
                 <p className="text-xs text-gray-500">{v.desc}</p>
               </motion.div>
               {i < 5 && (
-                <motion.div variants={scaleIn} className="flex-shrink-0 py-2">
-                  <ArrowRight className="w-5 h-5 text-gray-300 hidden md:block" />
-                  <ChevronDown className="w-5 h-5 text-gray-300 md:hidden" />
+                <motion.div variants={scaleIn} className="flex-shrink-0 hidden md:flex items-center py-2">
+                  <ArrowRight className="w-5 h-5 text-gray-300" />
                 </motion.div>
               )}
             </React.Fragment>

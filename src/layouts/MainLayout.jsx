@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Menu, X } from 'lucide-react';
 import { NAV_LINKS, pageVariants } from '../data/constants';
 
 export const MainLayout = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -13,6 +14,10 @@ export const MainLayout = () => {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden text-gray-900 flex flex-col">
@@ -56,8 +61,51 @@ export const MainLayout = () => {
               Case Study
               <ArrowRight className="w-4 h-4" />
             </NavLink>
+
+            <button
+              className="md:hidden p-2 rounded-lg text-gray-600 hover:text-brand hover:bg-orange-50 transition-colors"
+              onClick={() => setMobileOpen(o => !o)}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
+
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="md:hidden overflow-hidden bg-white/95 backdrop-blur-xl border-t border-orange-100"
+            >
+              <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1">
+                {NAV_LINKS.map(link => (
+                  <NavLink
+                    key={link.href}
+                    to={link.href}
+                    className={({ isActive }) =>
+                      `px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
+                        isActive ? 'text-brand bg-orange-50' : 'text-gray-600 hover:text-brand hover:bg-orange-50'
+                      }`
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
+                ))}
+                <NavLink
+                  to="/case-study"
+                  className="mt-2 flex items-center justify-center gap-2 px-5 py-3 rounded-full text-white font-bold text-sm"
+                  style={{ background: 'linear-gradient(135deg, #fe5621, #d94318)' }}
+                >
+                  Case Study <ArrowRight className="w-4 h-4" />
+                </NavLink>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.nav>
 
       {/* ── MAIN CONTENT ───────────────────────────────────────────────────── */}
