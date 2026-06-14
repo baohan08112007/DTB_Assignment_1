@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { ShopeeLogo } from '../components/Shared';
 import { NAV_LINKS, pageVariants } from '../data/constants';
 
 export const MainLayout = () => {
@@ -30,10 +29,7 @@ export const MainLayout = () => {
               to="/"
               className="flex items-center gap-2.5 group hover:scale-105 transition-transform"
             >
-              <ShopeeLogo className="w-10 h-10 text-[26px] drop-shadow-sm" />
-              <span className="text-2xl font-bold text-gray-900 tracking-tight">
-                Shopee
-              </span>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopee_logo.svg" alt="Shopee Logo" className="w-8 h-8 drop-shadow-sm" />
             </NavLink>
 
             <div className="hidden md:flex items-center gap-1">
@@ -83,8 +79,7 @@ export const MainLayout = () => {
       <footer className="border-t border-gray-100 py-12 bg-white mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2.5">
-            <ShopeeLogo className="w-8 h-8 text-[20px] drop-shadow-sm" />
-            <span className="font-bold text-gray-900 text-lg tracking-tight">Shopee</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopee_logo.svg" alt="Shopee Logo" className="w-8 h-8 drop-shadow-sm" />
           </div>
           <p className="text-sm text-gray-400 text-center">
             Group Project 2026 — Digital Business & E-commerce Course

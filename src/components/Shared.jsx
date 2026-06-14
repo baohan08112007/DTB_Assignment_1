@@ -59,19 +59,6 @@ export const Card = ({ children, className = '', hover = true }) => (
   </div>
 );
 
-export const ShopeeLogo = ({ className = "w-10 h-10" }) => (
-  <div className={`${className} rounded-[22%] flex-shrink-0 overflow-hidden shadow-sm`} style={{ background: 'linear-gradient(145deg, #f97040 0%, #ee4d2d 100%)' }}>
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      {/* Shopping bag body */}
-      <path d="M28 40 Q26 40 25 42 L20 80 Q19 83 22 83 L78 83 Q81 83 80 80 L75 42 Q74 40 72 40 Z" fill="white"/>
-      {/* Bag handle */}
-      <path d="M38 40 Q38 24 50 24 Q62 24 62 40" stroke="white" strokeWidth="6" strokeLinecap="round" fill="none"/>
-      {/* S letter in orange */}
-      <text x="50" y="71" textAnchor="middle" fontSize="30" fontWeight="900" fontFamily="Arial, sans-serif" fill="#ee4d2d" letterSpacing="-1">S</text>
-    </svg>
-  </div>
-);
-
 export const CompRow = ({ label, shopeeVal, coolmateVal, shopeeGood, coolmateGood }) => (
   <motion.tr
     variants={fadeUp}
