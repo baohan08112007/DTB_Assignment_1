@@ -130,7 +130,7 @@ export const MainLayout = () => {
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopee_logo.svg" alt="Shopee Logo" className="w-8 h-8 drop-shadow-sm" />
           </div>
           <p className="text-sm text-gray-400 text-center">
-            Group Project 2026 — Digital Business & E-commerce Course
+            Group Project 2026 — Digital Transformation of Business
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {NAV_LINKS.map(link => (

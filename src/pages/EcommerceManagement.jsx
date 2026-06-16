@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Smartphone, MessageSquare, CreditCard, Truck, Zap, CheckCircle, XCircle } from 'lucide-react';
 import { fadeUp, stagger, LOREM } from '../data/constants';
 import { AnimatedSection, SectionHeading, Card } from '../components/Shared';
+import SpotlightCard from '../components/SpotlightCard';
 
 export default function EcommerceManagement() {
   return (
@@ -14,7 +15,7 @@ export default function EcommerceManagement() {
       />
 
       {/* Channel Evolution */}
-      <motion.div variants={fadeUp} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm mb-12">
+      <SpotlightCard variants={fadeUp} spotlightColor="rgba(254, 86, 33, 0.08)" className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm mb-12">
         <h3 className="text-xl font-bold text-gray-900 text-center mb-8">Sales Channel Evolution</h3>
         <div className="flex flex-col md:flex-row items-stretch md:items-start gap-6">
           {[
@@ -29,10 +30,14 @@ export default function EcommerceManagement() {
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </SpotlightCard>
 
       {/* Platform Dependency */}
-      <motion.div variants={fadeUp} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm mb-12">
+      <SpotlightCard
+        variants={fadeUp}
+        splitColors={{ left: 'rgba(16, 185, 129, 0.12)', right: 'rgba(239, 68, 68, 0.12)' }}
+        className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm mb-12"
+      >
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-orange-50">
             <ShieldCheck className="w-5 h-5 text-brand" />
@@ -84,23 +89,26 @@ export default function EcommerceManagement() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </SpotlightCard>
 
       {/* Execution Challenges */}
       <motion.div variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         {[
-          { title: 'Mobile-First Commerce', icon: Smartphone, color: '#fe5621', desc: 'Consumers buy primarily via mobile. Interface must be optimized for a quick checkout experience.' },
-          { title: 'Social Commerce', icon: MessageSquare, color: '#ff7849', desc: 'Direct purchasing from TikTok, Facebook, Instagram. Channel shift is happening rapidly.' },
-          { title: 'COD vs Digital Pay', icon: CreditCard, color: '#ff9a77', desc: 'COD still accounts for a high percentage in SEA, causing return risks and slowing cash flow.' },
-          { title: 'Last-Mile Delivery', icon: Truck, color: '#d94318', desc: 'Logistics infrastructure and fast delivery expectations impact the entire operation.' },
+          { title: 'Mobile-First Commerce', icon: Smartphone, color: '#fe5621', stat: '95% via mobile', desc: 'Shopee optimizes every touchpoint for mobile navigation — from browsing to one-tap checkout.' },
+          { title: 'Social Commerce', icon: MessageSquare, color: '#ff7849', stat: 'Shopee Live & Video', desc: 'KOC reviews and user-generated content shorten the conversion process, blending entertainment with shopping.' },
+          { title: 'COD vs Digital Pay', icon: CreditCard, color: '#ff9a77', stat: 'ShopeePay · SPayLater', desc: 'Shopee counters SEA\'s COD reliance with digital payment incentives — vouchers and delivery discounts.' },
+          { title: 'Last-Mile Delivery', icon: Truck, color: '#d94318', stat: 'SPX Express', desc: 'Shopee\'s in-house logistics arm, combined with third-party partners, ensures reliable fulfillment at scale.' },
         ].map((item, i) => (
           <motion.div key={i} variants={fadeUp} whileHover={{ y: -5 }}>
-            <Card className="p-6 h-full">
-              <div className="w-12 h-12 rounded-2xl mb-5 flex items-center justify-center" style={{ background: `${item.color}15` }}>
-                {React.createElement(item.icon, { className: "w-6 h-6", style: { color: item.color } })}
+            <Card className="p-5 h-full flex flex-col gap-3">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${item.color}15` }}>
+                {React.createElement(item.icon, { className: "w-5 h-5", style: { color: item.color } })}
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">{item.title}</h4>
-              <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+              <div>
+                <h4 className="font-bold text-gray-900 text-sm mb-1">{item.title}</h4>
+                <span className="inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-2" style={{ background: `${item.color}15`, color: item.color }}>{item.stat}</span>
+                <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
             </Card>
           </motion.div>
         ))}
@@ -119,7 +127,7 @@ export default function EcommerceManagement() {
             AI Horizon
           </div>
           <h3 className="text-3xl font-bold text-white mb-4">The Future of AI in Commerce</h3>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">{LOREM}</p>
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">Shopee uses AI-powered recommendation systems to personalize product exposure based on search history and browsing patterns. Visual search tools allow users to upload images to identify matching products — illustrating how infrastructure, payment systems, logistics, and AI work together to support platform functionality.</p>
         </div>
       </motion.div>
     </AnimatedSection>

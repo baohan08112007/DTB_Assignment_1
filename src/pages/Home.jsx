@@ -1,8 +1,36 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ParticleCanvas } from '../components/Shared';
+import { TestimonialCarousel } from '../components/Carousel';
+
+const TESTIMONIALS = [
+  {
+    quote: "Shopee's platform lock-in mechanisms — from ShopeePay to Coins — demonstrate a masterclass in keeping users engaged within a closed-loop ecosystem.",
+    name: 'Digital Business Insight',
+    role: 'Platform Economy Analysis, 2024',
+    initials: 'DB',
+  },
+  {
+    quote: "95% of Shopee's transactions happen on mobile. This mobile-first model isn't just a feature — it's a strategic moat that competitors struggle to replicate.",
+    name: 'E-commerce Strategy Report',
+    role: 'Southeast Asia Market Study, 2024',
+    initials: 'ES',
+  },
+  {
+    quote: "Shopee Live's 200M+ monthly views is proof that shoppertainment — the fusion of entertainment and commerce — is becoming the dominant retail paradigm in SEA.",
+    name: 'Consumer Behaviour Review',
+    role: 'DTC & Social Commerce Trends, 2024',
+    initials: 'CB',
+  },
+  {
+    quote: "The POEM Loop (Paid → Owned → Earned) allows Shopee to continuously reduce customer acquisition costs while deepening long-term platform loyalty.",
+    name: 'Marketing Framework Analysis',
+    role: 'Traffic Control Strategy, 2024',
+    initials: 'MF',
+  },
+];
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -31,7 +59,7 @@ export default function Home() {
         style={{ background: 'radial-gradient(circle, #fe562140, transparent 70%)' }}
       />
 
-      <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 text-center max-w-5xl mx-auto px-4 pt-20">
+      <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 text-center max-w-5xl mx-auto px-4 pt-20 pb-10">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,7 +83,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
           <Link
             to="/case-study"
@@ -65,6 +93,22 @@ export default function Home() {
             Explore Case Study
             <ArrowRight className="w-5 h-5" />
           </Link>
+        </motion.div>
+
+        {/* Testimonial Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="relative max-w-2xl mx-auto bg-white/70 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-orange-100 shadow-sm"
+        >
+          <div
+            className="absolute -top-3 left-6 w-8 h-8 rounded-xl flex items-center justify-center"
+            style={{ background: 'linear-gradient(135deg, #fe5621, #d94318)' }}
+          >
+            <Quote className="w-4 h-4 text-white" />
+          </div>
+          <TestimonialCarousel testimonials={TESTIMONIALS} interval={4000} />
         </motion.div>
       </motion.div>
     </section>
