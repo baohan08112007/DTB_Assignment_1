@@ -39,9 +39,14 @@ export default function Home() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section id="hero" ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-24">
+    <section
+      id="hero"
+      ref={heroRef}
+      className="relative min-h-screen flex items-center justify-center -mt-24 pb-20"
+      style={{ background: 'linear-gradient(135deg, #fff7f4 0%, #ffffff 50%, #fff0eb 100%)' }}
+    >
       {/* Particle Background */}
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #fff7f4 0%, #ffffff 50%, #fff0eb 100%)' }}>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <ParticleCanvas />
       </div>
 
@@ -59,7 +64,7 @@ export default function Home() {
         style={{ background: 'radial-gradient(circle, #fe562140, transparent 70%)' }}
       />
 
-      <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 text-center max-w-5xl mx-auto px-4 pt-20 pb-10">
+      <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 text-center max-w-5xl mx-auto px-4 pt-32 pb-16">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
