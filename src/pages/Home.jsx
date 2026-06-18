@@ -42,7 +42,7 @@ export default function Home() {
     <section
       id="hero"
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center -mt-24 pb-20"
+      className="relative min-h-screen flex items-center justify-center -mt-24 pb-48"
       style={{ background: 'linear-gradient(135deg, #fff7f4 0%, #ffffff 50%, #fff0eb 100%)' }}
     >
       {/* Particle Background */}
